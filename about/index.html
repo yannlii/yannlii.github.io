@@ -11,9 +11,9 @@
   <script src="https://kit.fontawesome.com/bf18cd1a66.js" crossorigin="anonymous"></script>
   <style>
     body {
-      background-color: #000;
+      background-color: #000; /* 背景色为黑色 */
       color: #fff;
-      font-family: 'Georgia', serif; /* 更改为艺术家常用的正文字体 */
+      font-family: 'Georgia', serif; /* 正文字体设置为 Georgia */
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -22,7 +22,7 @@
     }
 
     .navbar {
-      background-color: #000;
+      background-color: #000; /* 导航栏背景色为黑色 */
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
@@ -56,14 +56,15 @@
 
     .section {
       padding: 20px;
-      background-color: #000;
+      background-color: #000; /* 内容背景色设置为黑色 */
       flex-grow: 1;
     }
 
+    /* 修改 overehard 样式 */
     .overheard {
-      font-family: 'Retro Script', cursive; /* 设置为 Retro Script 字体 */
-      font-size: 4rem;
-      color: #f0c8c8; /* 设置为粉色 */
+      font-family: 'Retro Script', cursive; /* 设置 Retro Script 字体 */
+      font-size: 4rem; /* 设置字体大小 */
+      color: #f0c8c8; /* 设置字体颜色为粉色 */
       text-align: center;
       margin-bottom: 30px;
     }
@@ -72,9 +73,9 @@
       width: 48%;
       display: inline-block;
       margin-bottom: 20px;
-      font-family: 'Georgia', serif;
+      font-family: 'Georgia', serif; /* 设置正文字体为 Georgia */
       font-size: 1.2rem;
-      color: #f0c8c8; /* 年份字体颜色为粉色 */
+      color: #f0c8c8; /* 年份字体为粉色 */
     }
 
     .year-block.left {
@@ -102,6 +103,14 @@
       padding: 0 18px;
       background-color: #222;
       color: #fff;
+      margin-top: 15px; /* 增加段落的间距 */
+    }
+
+    .panel p {
+      margin-bottom: 20px; /* 增加段落之间的间隔 */
+      line-height: 1.6; /* 增加行间距，改善阅读体验 */
+      text-align: justify; /* 调整正文为两端对齐 */
+      word-spacing: 0.15em; /* 调整中英文之间的间距 */
     }
 
     .accordion.active + .panel {
@@ -109,7 +118,7 @@
     }
 
     footer {
-      background-color: #000;
+      background-color: #000; /* 底部背景色为黑色 */
       padding: 10px;
       text-align: center;
       margin-top: auto;
@@ -124,16 +133,6 @@
       width: 50px;
       border-radius: 50%;
       margin-top: 10px;
-    }
-
-    /* 调整段落间距 */
-    .panel p {
-      margin-bottom: 15px;
-    }
-
-    /* 调整中英文间距 */
-    .panel p {
-      word-spacing: 0.15em;
     }
 
     @media screen and (max-width: 768px) {
@@ -180,7 +179,7 @@
   <section class="section">
 
     <div class="slide">
-      <h1 class="overheard">overheard</h1>
+      <h1 class="overheard">overheard</h1> <!-- 只保留一个 overheard 标题 -->
 
       <div class="year-block left">
         <button class="accordion">2023</button>
@@ -212,11 +211,6 @@
   </section>
 
   <footer>
-    <div class="logo">
-      <a href="/about/">
-        <img src="https://yannlii.github.io/logo.png" alt="Logo">
-      </a>
-    </div>
     <p>© 2023, Yan Li.</p>
   </footer>
 
