@@ -3,221 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>overheard - Yan Li</title>
+<title>Yan Li - Overheard</title>
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/bf18cd1a66.js" crossorigin="anonymous"></script>
-
-<!-- Google Fonts for handwriting -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Courier+Prime&display=swap" rel="stylesheet">
+<!-- 字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Courier+Prime&display=swap" rel="stylesheet">
 
 <style>
-  body {
+/* 全局 */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #111;
     color: #eee;
-    font-family: "Noto Serif SC", "Songti SC", serif;
     line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 20px;
-  }
+}
 
-  a {
-    color: #ff9ec5;
-    text-decoration: none;
-  }
-
-  /* Navbar */
-  .navbar {
+/* 导航栏 */
+nav.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
-  }
+    padding: 20px 50px;
+    background: #111;
+}
 
-  .logo img {
+nav.navbar .logo img {
     border-radius: 50%;
     width: 50px;
-    height: 50px;
-  }
+}
 
-  .menu a.active {
-    font-weight: bold;
-  }
+nav.navbar .menu a {
+    color: #eee;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: "Courier Prime", monospace;
+}
 
-  /* Title & subtitle */
-  .title-handwritten {
-    font-family: 'Pacifico', cursive;
-    font-size: 3em;
+nav.navbar .menu a.active {
+    color: #ff8da1;
+}
+
+/* 首页 hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    margin-bottom: 0.3em;
-  }
+    overflow: hidden;
+}
 
-  .subtitle-curve-svg {
-    display: block;
-    margin: 0 auto 3em auto;
-    width: 80%;
-    height: 80px;
-  }
+.hero h1 {
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 4em;
+    color: #eee;
+    z-index: 2;
+    margin: 0.2em;
+}
 
-  .subtitle-curve-svg text {
-    font-family: 'Courier Prime', monospace;
-    fill: #ff9ec5;
-    font-size: 22px;
+.hero .subtitle {
     font-style: italic;
-  }
+    color: #ccc;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+    z-index: 2;
+}
 
-  /* Accordion (年份) */
-  .accordion {
-    background: none;
-    border: none;
-    color: #ff9ec5;
-    cursor: pointer;
-    font-size: 2em;
-    font-family: 'Pacifico', cursive;
-    margin: 2em 0 0.5em 0;
-    display: block;
-    text-align: left;
-  }
+/* 粉色线条 */
+.hero .pink-line {
+    position: absolute;
+    width: 300px;
+    height: 6px;
+    background-color: #ff8da1;
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    z-index: 1;
+    animation: sway 4s ease-in-out infinite alternate;
+}
 
-  .accordion.active {
-    opacity: 0.8;
-  }
+@keyframes sway {
+    0% { transform: translate(-50%, -50%) rotate(8deg); }
+    50% { transform: translate(-50%, -50%) rotate(12deg); }
+    100% { transform: translate(-50%, -50%) rotate(8deg); }
+}
 
-  .panel {
-    padding-left: 1em;
-    border-left: 2px solid #ff9ec5;
-    display: none;
+/* 年份样式 */
+.year {
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 3em;
+    color: #ff8da1;
+    margin: 0.5em 0;
+}
+
+/* Overheard 页面 */
+.overheard {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.overheard h2 {
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 2.5em;
+    color: #eee;
+    margin-bottom: 0.2em;
+}
+
+.overheard .subtitle {
+    font-style: italic;
+    color: #ccc;
     margin-bottom: 2em;
-  }
+    text-align: center;
+}
 
-  .panel p.chinese {
-    font-size: 1.05em;
-    margin-bottom: 1.5em;
-  }
+.overheard .chinese, .overheard .english {
+    margin-bottom: 1.2em;
+}
 
-  .panel p.english {
-    font-size: 1em;
-    color: #ccc;
+.overheard .english em {
     font-style: italic;
-    margin-bottom: 1.5em;
-  }
+}
 
-  blockquote {
-    margin: 1em 0;
-    padding-left: 1em;
-    border-left: 3px solid #ff9ec5;
-    color: #ccc;
-    font-style: italic;
-  }
+.overheard img {
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-  footer {
+/* Footer */
+footer {
     text-align: center;
     margin-top: 50px;
     color: #888;
-  }
+    font-size: 0.9em;
+}
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- Navbar -->
+<!-- 导航 -->
 <nav class="navbar">
-  <div class="logo">
-    <a href="/about/">
-      <img src="https://yannlii.github.io/logo.png" alt="logo">
-    </a>
-  </div>
-  <div class="menu">
-    <a class="active" href="/about/">:)</a> / 
-    <a href="/tags/overheard/">overheard</a>
-  </div>
-  <div class="socials">
-    <a href="https://instagram.com/ilnayyanli" target="_blank">
-      <i class="fab fa-instagram fa-lg"></i>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="/about/"><img src="https://yannlii.github.io/logo.png" alt="logo"></a>
+    </div>
+    <div class="menu">
+        <a class="active" href="/about/">:)</a>
+        <a href="/tags/overheard/">overheard</a>
+        <a href="https://instagram.com/ilnayyanli" target="_blank">IG</a>
+    </div>
 </nav>
 
-<!-- Title -->
-<h1 class="title-handwritten">overheard</h1>
-<svg class="subtitle-curve-svg" viewBox="0 0 600 100">
-  <path id="curvePath" d="M50,60 Q300,0 550,60" fill="transparent"/>
-  <text>
-    <textPath xlink:href="#curvePath" startOffset="50%" text-anchor="middle">
-      photographs, fragments and what remains
-    </textPath>
-  </text>
-</svg>
+<!-- 首页 hero -->
+<section class="hero">
+    <h1>overheard</h1>
+    <p class="subtitle"><em>photographs, fragments and what remains</em></p>
+    <div class="pink-line"></div>
+</section>
 
-<!-- Content -->
-<button class="accordion">2023</button>
-<div class="panel">
-  <p class="chinese">
-    我在毕业论文的致谢中写过：“在每一个不得不原路返回的十字路口，马友友（Yo-Yo Ma）对大提琴始终如一的热情，以及淡豹关于成为一个不被打断的人的想象，一直是我精神世界里无形的支点。”  
-    马友友把大提琴视为一生的使命。我也时常用 <em>find your own cello</em> 这句话提醒自己去寻找那把属于自己的“大提琴”。  
-    于是在 <em>Cello Suite No.1</em> 的单曲循环里，赶在毕业之前完成了这个网站。
-  </p>
-  <p class="chinese">
-    如果有一天能继续拓展这些影像，我想在废墟中策划一场展览：把照片悬挂在被遗弃的建筑空地和斑驳的墙面上。参观者经过时，四周安静得近乎震耳，只剩下影像清诉背后的故事。这是 <em>overheard</em> 的由来。
-  </p>
-  <p class="english">
-    In the acknowledgements of my graduation thesis, I wrote:  
-    “At every crossroads where I had no choice but to turn back, Yo-Yo Ma’s unwavering devotion to the cello, and Dan Bao’s pursuit of becoming a person who is not constantly interrupted, remained the invisible pillars of my inner world.”
-  </p>
-  <p class="english">
-    With <em>Cello Suite No.1</em> on repeat, I completed this website just before graduation. Yo-Yo Ma has always regarded the cello as his life’s calling. I reminded myself with <em>find your own cello</em>—to seek the thing that is truly mine.
-  </p>
-</div>
+<!-- Overheard 页面内容 -->
+<section class="overheard">
 
-<button class="accordion">2026</button>
-<div class="panel">
-  <p class="chinese">
-    恍恍惚惚，又过了三年，网站也生了灰。  
-    这里的大多数照片来自那台被我称作“口袋朋友”的 <em>Olympus Mju II</em>，直到 2023 年底它被我丢在了那不勒斯的海边。
-  </p>
-  <p class="chinese">
-    爷爷去世之后，我几乎不再拍胶片。每次想整理已经洗好的底片，都不知道会在哪一卷里突然翻到和他一起逛公园的照片，于是又悄悄退回原位。
-  </p>
-  <p class="chinese">
-    在津巴布韦的新年夜，我独自坐在阳台上赏月。忽然想起苏轼写过的那句：
-  </p>
-  <blockquote>
-    “料得年年肠断处，明月夜，短松冈。”
-  </blockquote>
-  <p class="chinese">
-    有些思念不需要抵达，它会在同一轮月亮下反复出现。
-  </p>
-  <p class="english">
-    Three years passed in a haze, and the website had gathered dust. Most of these photos were taken with my “pocket friend,” an <em>Olympus Mju II</em>, left on the Naples shore at the end of 2023.
-  </p>
-  <p class="english">
-    After my grandfather passed, I barely touched film. Every time I thought about going through developed rolls, I hesitated—never knowing which one might reveal a park walk with him—so I put them aside again.
-  </p>
-  <p class="english">
-    On New Year’s Eve in Zimbabwe, I sat alone on the balcony, gazing at the moon. A line from Su Shi came to mind:
-  </p>
-  <blockquote class="english">
-    “Grief returns year after year, under the bright moon, on Short Pine Hill.”
-  </blockquote>
-  <p class="english">
-    Some longing doesn’t need to reach anywhere; it simply returns, again and again, beneath the same moon.
-  </p>
-</div>
+<h2>2023</h2>
+<p class="chinese">
+我在毕业论文的致谢中写过：“在每一个不得不原路返回的十字路口，马友友（Yo-Yo Ma）对大提琴始终如一的热情，以及淡豹关于成为一个不被打断的人的想象，一直是我精神世界里无形的支点。”  
+马友友把大提琴视为一生的使命。我也时常用 <em>find your own cello</em> 这句话提醒自己去寻找那把属于自己的“大提琴”。  
+于是在 <em>Cello Suite No.1</em> 的单曲循环里，赶在毕业之前完成了这个网站。
+</p>
+<p class="chinese">
+如果有一天能继续拓展这些影像，我想在废墟中策划一场展览：把照片悬挂在被遗弃的建筑空地和斑驳的墙面上。参观者经过时，四周安静得近乎震耳，只剩下影像清诉背后的故事。这是 <em>overheard</em> 的由来。
+</p>
+<p class="english">
+In the acknowledgements of my graduation thesis, I once wrote:  
+“At every crossroads where I had to turn back, Yo-Yo Ma’s unwavering devotion to the cello, and Dan Bao’s pursuit of being a person undisturbed, have been invisible anchors in my inner world.”  
+With <em>Cello Suite No.1</em> on repeat, I finished this website just before graduation. Yo-Yo Ma treats the cello as his life’s calling. I, too, kept reminding myself with <em>find your own cello</em>—to seek the thing that truly belongs to me.
+</p>
 
-<script>
-  const accordions = document.querySelectorAll(".accordion");
-  accordions.forEach(acc => {
-      acc.addEventListener("click", () => {
-          acc.classList.toggle("active");
-          const panel = acc.nextElementSibling;
-          panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-  });
-</script>
+<!-- 照片展示 -->
+<img src="/images/about_hucad548a36c746548e4169d30041223ab_460485_800x418_fill_box_center_3.png" loading="lazy" alt="photo">
+<img src="/images/about_hucad548a36c746548e4169d30041223ab_460485_3000x0_resize_box_3.png" loading="lazy" alt="photo">
+
+<h2>2026</h2>
+<p class="chinese">
+恍恍惚惚，又过了三年，网站也生了灰。  
+这里的大多数照片来自那台被我称作“口袋朋友”的 <em>Olympus Mju II</em>，直到 2023 年底它被我丢在了那不勒斯的海边。
+</p>
+<p class="chinese">
+爷爷去世之后，我几乎不再拍胶片。每次想整理已经洗好的底片，都不知道会在哪一卷里突然翻到和他一起逛公园的照片，于是又悄悄退回原位。
+</p>
+<p class="chinese">
+在津巴布韦的新年夜，我独自坐在阳台上赏月。忽然想起苏轼写过的那句：
+</p>
+<blockquote>“料得年年肠断处，明月夜，短松冈。”</blockquote>
+<p class="english">
+Three years passed quietly, and the website had gathered dust. Most of these photos were taken with my “pocket friend,” an <em>Olympus Mju II</em>, which I left on the Naples shore at the end of 2023.  
+After my grandfather passed, I barely touched film. Every time I tried to sort through developed rolls, I never knew which might suddenly reveal a walk in the park with him.  
+On New Year’s Eve in Zimbabwe, I sat alone on the balcony, gazing at the moon. A line from Su Shi came to mind:  
+“Grief returns year after year, under the bright moon, on Short Pine Hill.”
+</p>
+
+</section>
 
 <footer>
-  © 2023, Yan Li.
+© 2023, Yan Li.
 </footer>
 
 </body>
