@@ -3,142 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yan Li</title>
-<link rel="stylesheet" href="https://kit.fontawesome.com/bf18cd1a66.js" crossorigin="anonymous">
+<title>overheard - Yan Li</title>
+
+<!-- Google Fonts: 手写字体 + 打印机风格字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime&display=swap" rel="stylesheet">
+
 <style>
-    /* 全局风格 */
     body {
-        margin: 0;
         background-color: #111;
         color: #eee;
-        font-family: "Courier New", Courier, monospace;
-        line-height: 1.8;
-    }
-    a {
-        text-decoration: none;
-        color: #eee;
+        font-family: "Songti SC", "STSong", serif;
+        margin: 0;
+        padding: 0;
     }
 
-    /* Navbar */
-    .navbar {
+    nav.navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1em 2em;
-        border-bottom: 2px solid #ff77c0; /* 粉色线 */
+        background-color: #111;
     }
-    .navbar-middle .menu a {
-        margin: 0 0.5em;
+
+    nav a {
+        color: #eee;
+        text-decoration: none;
+        margin-right: 1em;
+        font-family: "Courier Prime", monospace;
+    }
+
+    nav a.active {
         font-weight: bold;
     }
-    .navbar-middle .menu a.active {
-        color: #ff77c0;
-    }
+
     .logo img {
-        height: 50px;
+        width: 50px;
         border-radius: 50%;
     }
 
-    /* Header */
-    h1 {
+    .section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3em 2em;
         text-align: center;
-        font-size: 3em;
-        margin-top: 2em;
-        font-family: "Brush Script MT", cursive; /* 标题手写风格 */
     }
+
+    h1.overheard-title {
+        font-family: 'Great Vibes', cursive;
+        font-size: 4em;
+        color: #fff;
+        margin-bottom: 0.2em;
+    }
+
     .subtitle {
-        text-align: center;
-        color: #ff77c0;
+        display: inline-block;
+        color: #ff7eb9; /* 粉色 */
         font-style: italic;
+        font-size: 1.3em;
         margin-bottom: 2em;
+        transform: rotate(-5deg); /* 弧线效果 */
     }
 
-    /* 粉色线 */
-    .line {
-        width: 60px;
+    .pink-line {
+        width: 80px;
         height: 3px;
-        background-color: #ff77c0;
-        margin: 0.5em auto 2em;
+        background-color: #ff7eb9;
+        margin: 1em auto 2em;
     }
 
-    /* 内容 */
-    .content {
-        max-width: 800px;
-        margin: 0 auto 5em;
-        padding: 0 20px;
+    .accordion {
+        font-family: 'Great Vibes', cursive;
+        background-color: #222;
+        color: #eee;
+        cursor: pointer;
+        padding: 1em 2em;
+        border: none;
+        text-align: center;
+        font-size: 2em;
+        margin: 1em 0;
+        transition: background-color 0.2s;
     }
+
+    .accordion:hover {
+        background-color: #333;
+    }
+
+    .panel {
+        padding: 1em 2em;
+        display: none;
+        background-color: #1a1a1a;
+        border-left: 2px solid #ff7eb9;
+        border-right: 2px solid #ff7eb9;
+        border-bottom: 2px solid #ff7eb9;
+        text-align: left;
+    }
+
     .chinese {
-        font-family: "Songti SC", "STSong", serif; /* 中文复古风 */
-        font-size: 1.1em;
+        font-size: 1.05em;
         margin-bottom: 1.5em;
+        line-height: 1.8;
     }
+
     .english {
+        font-family: 'Courier Prime', monospace;
         font-style: italic;
         color: #ccc;
         margin-bottom: 1.5em;
+        line-height: 1.6;
     }
+
     blockquote {
         margin: 1em 0;
         padding-left: 1em;
-        border-left: 3px solid #ff77c0;
-        font-style: italic;
+        border-left: 3px solid #ff7eb9;
         color: #ccc;
+        font-style: italic;
     }
 
-    /* 年份手写按钮 */
-    .accordion {
-        background: none;
-        border: none;
-        color: #eee;
-        font-size: 1.8em;
-        font-family: "Brush Script MT", cursive;
-        margin: 2em 0 1em;
-        cursor: pointer;
-        outline: none;
-    }
-    .accordion:hover {
-        color: #ff77c0;
-    }
-    .panel {
-        display: none;
-        padding-left: 1em;
-        border-left: 2px solid #ff77c0;
-    }
-
-    /* Footer */
     footer {
         text-align: center;
-        margin: 5em 0 2em;
+        margin: 3em 0;
         color: #888;
     }
 </style>
 </head>
-<body>
 
-<!-- Navbar -->
+<body>
 <nav class="navbar">
     <div class="logo">
-        <a href="/about/"><img src="https://yannlii.github.io/logo.png" alt="Logo"></a>
+        <a href="/about/"><img src="https://yannlii.github.io/logo.png" alt="logo"></a>
     </div>
-    <div class="navbar-middle">
-        <div class="menu">
-            <a class="active" href="/about/">:)</a> / 
-            <a href="/overheard/">overheard</a>
-        </div>
+    <div class="menu">
+        <a class="active" href="/about/">:)</a> / 
+        <a href="/tags/overheard/">overheard</a>
     </div>
-    <div class="navbar-end">
+    <div class="socials">
         <a href="https://instagram.com/ilnayyanli" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
     </div>
 </nav>
 
-<!-- Header -->
-<h1>overheard</h1>
-<div class="line"></div>
-<p class="subtitle">photographs, fragments and what remains</p>
+<section class="section">
+    <h1 class="overheard-title">overheard</h1>
+    <div class="subtitle">photographs, fragments and what remains</div>
+    <div class="pink-line"></div>
 
-<!-- Content -->
-<div class="content">
-    <!-- 2023 -->
     <button class="accordion">2023</button>
     <div class="panel">
         <p class="chinese">
@@ -158,36 +166,17 @@
         </p>
     </div>
 
-    <!-- 2026 -->
     <button class="accordion">2026</button>
     <div class="panel">
         <p class="chinese">
             恍恍惚惚，又过了三年，网站也生了灰。  
             这里的大多数照片来自那台被我称作“口袋朋友”的 <em>Olympus Mju II</em>，直到 2023 年底它被我丢在了那不勒斯的海边。
         </p>
-        <p class="chinese">
-            爷爷去世之后，我几乎不再拍胶片。每次想整理已经洗好的底片，都不知道会在哪一卷里突然翻到和他一起逛公园的照片，于是又悄悄退回原位。
-        </p>
-        <p class="chinese">
-            在津巴布韦的新年夜，我独自坐在阳台上赏月。忽然想起苏轼写过的那句：
-        </p>
-        <blockquote>
-            “料得年年肠断处，明月夜，短松冈。”
-        </blockquote>
-        <p class="chinese">
-            有些思念不需要抵达，它会在同一轮月亮下反复出现。
-        </p>
         <p class="english">
             Three years passed in a haze, and the website had gathered dust. Most of these photos were taken with my “pocket friend,” an <em>Olympus u2</em>, which I left on the Naples shore at the end of 2023.
         </p>
-        <p class="english">
-            After my grandfather passed, I barely touched film. Every time I thought of going through developed rolls, I hesitated—never knowing which one might suddenly reveal a park walk with him—so I put them aside again and again.
-        </p>
     </div>
-</div>
-
-<!-- Footer -->
-<footer>© 2023, Yan Li.</footer>
+</section>
 
 <script>
     const accordions = document.querySelectorAll(".accordion");
@@ -195,10 +184,15 @@
         acc.addEventListener("click", () => {
             acc.classList.toggle("active");
             const panel = acc.nextElementSibling;
-            panel.style.display = panel.style.display === "block" ? "none" : "block";
+            panel.style.display = (panel.style.display === "block") ? "none" : "block";
         });
     });
 </script>
 
+<footer>
+    © 2023, Yan Li.
+</footer>
+
+<script src="https://kit.fontawesome.com/bf18cd1a66.js" crossorigin="anonymous"></script>
 </body>
 </html>
