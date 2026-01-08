@@ -13,9 +13,12 @@
     body {
       background-color: #000;
       color: #fff;
-      font-family: 'Courier New', monospace;
+      font-family: 'Georgia', serif; /* 更改为艺术家常用的正文字体 */
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .navbar {
@@ -54,12 +57,13 @@
     .section {
       padding: 20px;
       background-color: #000;
+      flex-grow: 1;
     }
 
     .overheard {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
-      color: #f0c8c8;
+      font-family: 'Retro Script', cursive; /* 设置为 Retro Script 字体 */
+      font-size: 4rem;
+      color: #f0c8c8; /* 设置为粉色 */
       text-align: center;
       margin-bottom: 30px;
     }
@@ -68,7 +72,17 @@
       width: 48%;
       display: inline-block;
       margin-bottom: 20px;
-      font-family: 'Courier New', monospace;
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      color: #f0c8c8; /* 年份字体颜色为粉色 */
+    }
+
+    .year-block.left {
+      text-align: left;
+    }
+
+    .year-block.right {
+      text-align: right;
     }
 
     .accordion {
@@ -98,6 +112,7 @@
       background-color: #000;
       padding: 10px;
       text-align: center;
+      margin-top: auto;
     }
 
     footer p {
@@ -105,9 +120,39 @@
       margin: 0;
     }
 
+    footer .logo img {
+      width: 50px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+
+    /* 调整段落间距 */
+    .panel p {
+      margin-bottom: 15px;
+    }
+
+    /* 调整中英文间距 */
+    .panel p {
+      word-spacing: 0.15em;
+    }
+
     @media screen and (max-width: 768px) {
+      /* 手机端适配 */
       .year-block {
-        width: 100%;
+        width: 100%; /* 年份块全宽 */
+        text-align: center; /* 中心对齐 */
+      }
+
+      .overheard {
+        font-size: 3rem; /* 适配小屏幕，缩小标题字体 */
+      }
+
+      footer {
+        font-size: 0.8rem; /* 调整底部字体大小 */
+      }
+
+      .social i {
+        font-size: 1.2rem; /* 社交图标大小适配 */
       }
     }
   </style>
@@ -167,6 +212,11 @@
   </section>
 
   <footer>
+    <div class="logo">
+      <a href="/about/">
+        <img src="https://yannlii.github.io/logo.png" alt="Logo">
+      </a>
+    </div>
     <p>© 2023, Yan Li.</p>
   </footer>
 
