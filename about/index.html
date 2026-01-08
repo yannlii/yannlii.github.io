@@ -11,9 +11,9 @@
   <script src="https://kit.fontawesome.com/bf18cd1a66.js" crossorigin="anonymous"></script>
   <style>
     body {
-      background-color: #000; /* 背景色为黑色 */
+      background-color: #000;
       color: #fff;
-      font-family: 'Georgia', serif; /* 正文字体设置为 Georgia */
+      font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -22,7 +22,7 @@
     }
 
     .navbar {
-      background-color: #000; /* 导航栏背景色为黑色 */
+      background-color: #000;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
@@ -35,7 +35,8 @@
     }
 
     .menu a {
-      color: #fff;
+      color: #f0c8c8; /* 设置导航中的文本为粉色 */
+      font-family: 'Retro Script', cursive; /* 设置导航字体为 Retro Script */
       text-decoration: none;
       padding: 5px 10px;
       margin: 0 10px;
@@ -56,15 +57,14 @@
 
     .section {
       padding: 20px;
-      background-color: #000; /* 内容背景色设置为黑色 */
+      background-color: #000;
       flex-grow: 1;
     }
 
-    /* 修改 overehard 样式 */
     .overheard {
-      font-family: 'Retro Script', cursive; /* 设置 Retro Script 字体 */
-      font-size: 4rem; /* 设置字体大小 */
-      color: #f0c8c8; /* 设置字体颜色为粉色 */
+      font-family: 'Retro Script', cursive;
+      font-size: 4rem;
+      color: #f0c8c8; /* 设置主标题为粉色 */
       text-align: center;
       margin-bottom: 30px;
     }
@@ -73,7 +73,7 @@
       width: 48%;
       display: inline-block;
       margin-bottom: 20px;
-      font-family: 'Georgia', serif; /* 设置正文字体为 Georgia */
+      font-family: 'Georgia', serif;
       font-size: 1.2rem;
       color: #f0c8c8; /* 年份字体为粉色 */
     }
@@ -103,14 +103,14 @@
       padding: 0 18px;
       background-color: #222;
       color: #fff;
-      margin-top: 15px; /* 增加段落的间距 */
+      margin-top: 15px;
     }
 
     .panel p {
-      margin-bottom: 20px; /* 增加段落之间的间隔 */
-      line-height: 1.6; /* 增加行间距，改善阅读体验 */
-      text-align: justify; /* 调整正文为两端对齐 */
-      word-spacing: 0.15em; /* 调整中英文之间的间距 */
+      margin-bottom: 20px;
+      line-height: 1.6;
+      text-align: justify;
+      word-spacing: 0.15em;
     }
 
     .accordion.active + .panel {
@@ -118,7 +118,7 @@
     }
 
     footer {
-      background-color: #000; /* 底部背景色为黑色 */
+      background-color: #000;
       padding: 10px;
       text-align: center;
       margin-top: auto;
@@ -136,22 +136,21 @@
     }
 
     @media screen and (max-width: 768px) {
-      /* 手机端适配 */
       .year-block {
-        width: 100%; /* 年份块全宽 */
-        text-align: center; /* 中心对齐 */
+        width: 100%;
+        text-align: center;
       }
 
       .overheard {
-        font-size: 3rem; /* 适配小屏幕，缩小标题字体 */
+        font-size: 3rem;
       }
 
       footer {
-        font-size: 0.8rem; /* 调整底部字体大小 */
+        font-size: 0.8rem;
       }
 
       .social i {
-        font-size: 1.2rem; /* 社交图标大小适配 */
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -167,7 +166,7 @@
     </div>
     <div class="menu">
       <a href="/about/">:)</a>
-      <a href="/tags/overheard/">overheard</a>
+      <a href="/tags/overheard/">overheard</a> <!-- 保持此链接作为导航 -->
     </div>
     <div class="social">
       <a href="https://instagram.com/ilnayyanli" target="_blank">
@@ -177,9 +176,8 @@
   </nav>
 
   <section class="section">
-
     <div class="slide">
-      <h1 class="overheard">overheard</h1> <!-- 只保留一个 overheard 标题 -->
+      <h1 class="overheard">overheard</h1>
 
       <div class="year-block left">
         <button class="accordion">2023</button>
@@ -200,10 +198,6 @@
           <p>爷爷去世之后我几乎不再拍胶片。每次想整理已经洗好的底片，都不知道会在哪一卷里突然翻到和他一起在公园散步的照片，于是总是一再搁置。</p>
           <p>新年夜，我独自坐在津巴布韦新家的阳台上赏月，忽而想起苏轼那句：“料得年年肠断处，明月夜，短松冈。”</p>
           <p>有些思念无处抵达，但会在同一轮月亮下反复出现。</p>
-          <p>Three more years drifted by in blur, and the website had gathered dust. Most of these photos were taken with my pocket companion - an Olympus Mju II, which I let slip away on a quiet day by the shores of Napoli at the end of 2023.</p>
-          <p>After my grandfather passed away, I barely touched film. Every time I thought of sorting through the developed rolls, I never knew which one might unexpectedly reveal a walk in the park with him, so I set them aside again and again.</p>
-          <p>On this New Year’s Eve, I sat alone on the balcony of my new home in Zimbabwe, lost in the gentle gaze of the moon. A line from Su Shi came to mind: “Must it be that every year I'll think of that heart-breaking place, Where the moon shines brightly in the night, and bare pines guard the tomb.”</p>
-          <p>Some longings never need to reach anywhere; they return again and again under the same moon.</p>
         </div>
       </div>
 
@@ -215,7 +209,6 @@
   </footer>
 
   <script>
-    // 折叠功能
     var acc = document.getElementsByClassName("accordion");
     for (let i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
