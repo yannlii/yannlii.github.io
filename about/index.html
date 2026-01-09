@@ -43,7 +43,7 @@
       font-family: 'Special Elite', monospace;
       font-size: 1.6em;
       cursor: pointer;
-      margin: 20px 40px; /* increased horizontal spacing */
+      margin: 20px 40px; /* horizontal spacing */
       padding: 6px 0;
       text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); /* subtle glow */
       transition: all 0.2s;
@@ -56,7 +56,7 @@
       transform: translateX(2px);
     }
 
-    /* Indie-style content boxes */
+    /* Indie-style content boxes (left-aligned like 2026) */
     .content-box {
       display: none;
       padding: 20px;
@@ -68,24 +68,14 @@
       max-width: 800px;
       opacity: 0; /* start invisible for fade-in */
       transition: opacity 0.6s ease;
+      text-align: left; /* left-aligned content */
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Fade-in class */
     .fade-in {
       opacity: 1 !important;
-    }
-
-    /* Staggered indie layout */
-    .content-box:nth-of-type(1) {
-      margin-left: 0; /* 2023 left-aligned */
-      margin-right: auto;
-      text-align: left;
-    }
-
-    .content-box:nth-of-type(2) {
-      margin-left: auto; /* 2026 right-aligned */
-      margin-right: 0;
-      text-align: right;
     }
 
     .content-box p {
@@ -94,7 +84,7 @@
     }
 
     @media (max-width: 800px) {
-      /* Stagger collapses on mobile for readability */
+      /* Mobile: content boxes full width */
       .content-box {
         margin-left: auto;
         margin-right: auto;
